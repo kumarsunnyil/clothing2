@@ -26,8 +26,10 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () =>
-  signInWithPopup(auth, googleProvider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+
+// signin with redirect
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
 // Singleton instance
 export const db = getFirestore();
