@@ -12,16 +12,16 @@ import {
 
 function SignIn() {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getRedirectResult(auth);
-      console.log(response);
-      if(response) {
-        const userDocRef = await createUserDocumentFromAuth(response.user);
-      }
-    }
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await getRedirectResult(auth);
+  //     console.log(response);
+  //     if(response) {
+  //       const userDocRef = await createUserDocumentFromAuth(response.user);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
   
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
@@ -35,12 +35,15 @@ function SignIn() {
         <h1>Sign -In Page</h1>
         <button onClick={logGoogleUser}> Sign in with Google Popup</button>
       </div>
+      {/*
       <div>
-        <button onClick={signInWithGoogleRedirect}> 
-        
-          Sign in with Google Redirect
-        </button>
+
+      <button onClick={signInWithGoogleRedirect}> 
+      
+      Sign in with Google Redirect
+      </button>
       </div>
+    */}
     </div>
   );
 }
